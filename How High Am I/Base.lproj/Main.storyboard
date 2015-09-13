@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="How_High_Am_I" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +16,71 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Ft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyK-lV-3KS">
+                                <rect key="frame" x="111" y="147" width="378" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="BXn-y1-hLf"/>
+                                    <constraint firstAttribute="width" constant="378" id="MQY-hY-oPx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="50"/>
+                                <color key="textColor" red="0.23137254900000001" green="0.81568627449999997" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elh-WM-TUh">
+                                <rect key="frame" x="49" y="294" width="64" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Gl3-62-oYE"/>
+                                    <constraint firstAttribute="width" constant="64" id="r9y-I2-h4S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7W-Wd-LlD">
+                                <rect key="frame" x="124" y="294" width="329" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="329" id="Kf1-FT-03t"/>
+                                    <constraint firstAttribute="height" constant="21" id="iMX-8w-KaZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" red="0.23137254900000001" green="0.81568627449999997" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mYv-Ad-RxO">
+                                <rect key="frame" x="244" y="111" width="113" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Dqd-qA-L93"/>
+                                    <constraint firstAttribute="width" constant="113" id="Uvd-QE-brM"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Feet"/>
+                                    <segment title="Meters"/>
+                                </segments>
+                                <color key="tintColor" red="0.23137254900000001" green="0.81568627449999997" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentedAction:" destination="vXZ-lx-hvc" eventType="valueChanged" id="1L9-1x-eKE"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="C7W-Wd-LlD" firstAttribute="leading" secondItem="elh-WM-TUh" secondAttribute="trailing" constant="11" id="2nS-NR-XxY"/>
+                            <constraint firstItem="elh-WM-TUh" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="274" id="7QE-ff-MzE"/>
+                            <constraint firstAttribute="centerX" secondItem="jyK-lV-3KS" secondAttribute="centerX" id="Cho-PR-01s"/>
+                            <constraint firstItem="elh-WM-TUh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="33" id="FeD-IN-eN2"/>
+                            <constraint firstItem="C7W-Wd-LlD" firstAttribute="top" secondItem="jyK-lV-3KS" secondAttribute="bottom" constant="87" id="Hca-8y-zbA"/>
+                            <constraint firstItem="mYv-Ad-RxO" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="91" id="Nyh-1W-1RG"/>
+                            <constraint firstAttribute="centerX" secondItem="jyK-lV-3KS" secondAttribute="centerX" id="ZPN-pn-yvZ"/>
+                            <constraint firstItem="jyK-lV-3KS" firstAttribute="top" secondItem="mYv-Ad-RxO" secondAttribute="bottom" constant="8" id="tni-cV-JWu"/>
+                            <constraint firstAttribute="centerX" secondItem="mYv-Ad-RxO" secondAttribute="centerX" id="zP6-Ws-1ny"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="altitude" destination="jyK-lV-3KS" id="DA0-vh-01B"/>
+                        <outlet property="cityLabel" destination="C7W-Wd-LlD" id="lM5-7Q-bjB"/>
+                        <outlet property="segmentedOutlet" destination="mYv-Ad-RxO" id="S53-9f-7qA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
