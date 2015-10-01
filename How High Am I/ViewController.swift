@@ -41,7 +41,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate
         }
         else
         {
-            println("Location services are not enabled")
+
         }
     }
     
@@ -70,22 +70,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate
         }
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!)
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
-        let newLocation = locations.last as! CLLocation
+        let newLocation = locations.last
         location = newLocation
         if let location = location
         {
             if (unitSetting == .Feet)
             {
                 // Convert the meters to feet
-                var alt:CLLocationDistance = location.altitude * 3.2808399
-                
+                let alt:CLLocationDistance = location.altitude * 3.2808399
+
                 altitude.text = String(format: "%.0f ft", alt)
             }
             else
             {
-                var alt:CLLocationDistance = location.altitude
+                let alt:CLLocationDistance = location.altitude
                 
                 altitude.text = String(format: "%.0f m", alt)
             }
@@ -95,17 +95,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate
             altitude.text = "N/A"
         }
         
-        CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: { (placemarks, error) -> Void in
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: { (placemarks, error) -> Void in
             if (error != nil)
             {
-                println("Error:" + error.localizedDescription)
+                print("Error:" + error!.localizedDescription)
                 return
             }
-            if placemarks.count > 0
+            if placemarks?.count > 0
             {
-                let pm = placemarks[0] as! CLPlacemark
+                let pm = placemarks?[0]
                 
-                self.cityLabel.text = pm.locality
+                self.cityLabel.text = pm?.locality
             }
             else
             {
@@ -115,19 +115,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate
         })
     }
     
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus)
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus)
     {
         locationManager.startUpdatingLocation()
     }
     
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!)
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
     {
         locationManager.stopUpdatingLocation()
-        if ((error) != nil)
-        {
-            println("Error while updating location: \(error.localizedDescription)")
-        }
-        
     }
     
     
