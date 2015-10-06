@@ -18,6 +18,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate
     var location: CLLocation?
     var unitSetting: Units = .Feet
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var verticalAccuracyLabel: UILabel!
     
     enum Units {
         case Feet
@@ -80,15 +81,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate
             {
                 // Convert the meters to feet
                 let alt:CLLocationDistance = location.altitude * 3.2808399
-
+                let va = location.verticalAccuracy * 3.2808399
+               
                 altitude.text = String(format: "%.0f ft", alt)
+                verticalAccuracyLabel.text = String(format: "%.0f ft", va)
             }
             else
             {
                 let alt:CLLocationDistance = location.altitude
-                
+                let va = location.verticalAccuracy
+
                 altitude.text = String(format: "%.0f m", alt)
+                verticalAccuracyLabel.text = String(format: "%.0f m", va)
             }
+
         }
         else
         {

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -37,8 +38,18 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accuracy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljE-ef-nuI">
+                                <rect key="frame" x="49" y="331" width="100" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="74w-zG-r6j"/>
+                                    <constraint firstAttribute="width" constant="100" id="QXg-Da-eqy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7W-Wd-LlD">
-                                <rect key="frame" x="124" y="294" width="329" height="21"/>
+                                <rect key="frame" x="189" y="294" width="329" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="329" id="Kf1-FT-03t"/>
                                     <constraint firstAttribute="height" constant="21" id="iMX-8w-KaZ"/>
@@ -62,17 +73,31 @@
                                     <action selector="segmentedAction:" destination="vXZ-lx-hvc" eventType="valueChanged" id="1L9-1x-eKE"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Ft" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p33-Ee-TX5">
+                                <rect key="frame" x="189" y="331" width="122" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="122" id="Ds8-79-VTe"/>
+                                    <constraint firstAttribute="height" constant="26" id="TH2-fq-UBn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" red="0.23137254900000001" green="0.81568627449999997" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="C7W-Wd-LlD" firstAttribute="leading" secondItem="elh-WM-TUh" secondAttribute="trailing" constant="11" id="2nS-NR-XxY"/>
+                            <constraint firstItem="C7W-Wd-LlD" firstAttribute="leading" secondItem="elh-WM-TUh" secondAttribute="trailing" constant="76" id="2nS-NR-XxY"/>
                             <constraint firstItem="elh-WM-TUh" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="274" id="7QE-ff-MzE"/>
                             <constraint firstAttribute="centerX" secondItem="jyK-lV-3KS" secondAttribute="centerX" id="Cho-PR-01s"/>
-                            <constraint firstItem="elh-WM-TUh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="33" id="FeD-IN-eN2"/>
+                            <constraint firstItem="elh-WM-TUh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="29" id="FeD-IN-eN2"/>
                             <constraint firstItem="C7W-Wd-LlD" firstAttribute="top" secondItem="jyK-lV-3KS" secondAttribute="bottom" constant="87" id="Hca-8y-zbA"/>
                             <constraint firstItem="mYv-Ad-RxO" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="91" id="Nyh-1W-1RG"/>
+                            <constraint firstItem="p33-Ee-TX5" firstAttribute="top" secondItem="C7W-Wd-LlD" secondAttribute="bottom" constant="16" id="TDT-7Z-Djv"/>
+                            <constraint firstItem="ljE-ef-nuI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="29" id="Ytt-vw-zZN"/>
                             <constraint firstAttribute="centerX" secondItem="jyK-lV-3KS" secondAttribute="centerX" id="ZPN-pn-yvZ"/>
+                            <constraint firstItem="p33-Ee-TX5" firstAttribute="leading" secondItem="ljE-ef-nuI" secondAttribute="trailing" constant="40" id="t5W-xm-cxQ"/>
                             <constraint firstItem="jyK-lV-3KS" firstAttribute="top" secondItem="mYv-Ad-RxO" secondAttribute="bottom" constant="8" id="tni-cV-JWu"/>
+                            <constraint firstItem="ljE-ef-nuI" firstAttribute="top" secondItem="elh-WM-TUh" secondAttribute="bottom" constant="16" id="z39-hK-ABc"/>
                             <constraint firstAttribute="centerX" secondItem="mYv-Ad-RxO" secondAttribute="centerX" id="zP6-Ws-1ny"/>
                         </constraints>
                     </view>
@@ -80,10 +105,12 @@
                         <outlet property="altitude" destination="jyK-lV-3KS" id="DA0-vh-01B"/>
                         <outlet property="cityLabel" destination="C7W-Wd-LlD" id="lM5-7Q-bjB"/>
                         <outlet property="segmentedOutlet" destination="mYv-Ad-RxO" id="S53-9f-7qA"/>
+                        <outlet property="verticalAccuracyLabel" destination="p33-Ee-TX5" id="s2j-Pq-MI2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="507" y="429"/>
         </scene>
     </scenes>
 </document>
